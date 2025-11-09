@@ -1,124 +1,78 @@
 # 🚀 Project Portfolio
 
-Welcome to my project portfolio! This repository serves as a central hub for all my personal and collaborative projects. Here you'll find a curated collection of my work, ranging from experimental prototypes to fully-fledged applications.
+Welcome to my project portfolio! This repository is a hub for my personal and collaborative work—from experimental prototypes to production-ready apps.
 
 ---
 
-## 📌 Current Projects
+## 📌 Featured Projects
 
-### Project 1: [Project Name]
-**Description:** Brief description of what this project does and why it's interesting.
-
-**Technologies:** List of key technologies/frameworks used
-
-**Status:** 🟢 Active Development | 🟡 In Progress | 🔵 Completed
-
-**Links:** [GitHub Repo](#) | [Live Demo](#) | [Documentation](#)
+### AI Banking Transaction Categorization System
+**Description:** End-to-end workflow to auto-categorize banking transactions from Excel/CSV using a FLAN-T5 generative model with fuzzy normalization for long-tail categories. Supports retraining from corrected files and Excel-preserving output formatting.  
+**Technologies:** Python, Flask, Hugging Face (FLAN-T5), scikit-learn, Pandas, OpenPyXL, Docker  
+**Status:** 🔵 Completed  
+**Links:** [GitHub Repo](#) • [Live Demo](#) • [Docs](#)
 
 ---
 
-### Project 2: [Project Name]
-**Description:** Brief description of what this project does and why it's interesting.
-
-**Technologies:** List of key technologies/frameworks used
-
-**Status:** 🟢 Active Development | 🟡 In Progress | 🔵 Completed
-
-**Links:** [GitHub Repo](#) | [Live Demo](#) | [Documentation](#)
+### AI Restaurant Recommender & Review Summarizer
+**Description:** Personalized restaurant ranking with scraping, review parsing, GPT-based dish highlights, caching, and a clean map-centric UI.  
+**Technologies:** Python, Flask, HTML/CSS/JS, GPT  
+**Status:** 🔵 Completed  
+**Links:** [GitHub Repo](#) • [Live Demo](#) • [Docs](#)
 
 ---
 
-### Project 3: [Project Name]
-**Description:** Brief description of what this project does and why it's interesting.
+### Client Database Management System
+**Description:** Role-based client management with secure APIs, server-side pagination, CSV bulk import, and audit logs.  
+**Technologies:** React, Tailwind, Flask, SQL (MySQL/Postgres)  
+**Status:** 🔵 Completed  
+**Links:** [GitHub Repo](#) • [Live Demo](#) • [Docs](#)
 
-**Technologies:** List of key technologies/frameworks used
+---
 
-**Status:** 🟢 Active Development | 🟡 In Progress | 🔵 Completed
+### Blackjack (FreeRTOS) — Embedded FSM Game
+**Description:** Real-time Blackjack on a microcontroller with task-based FSM, ISR-safe inputs, LCD UI, joystick/buttons, EEPROM-backed scores, and TRNG-based shuffling.  
+**Technologies:** C, FreeRTOS, EEPROM, LCD, TRNG  
+**Status:** 🔵 Completed  
+**Links:** [GitHub Repo](#) • [Demo Video](#) • [Docs](#)
 
-**Links:** [GitHub Repo](#) | [Live Demo](#) | [Documentation](#)
+---
+
+### Mobile Sensor Logger & Edge Inference
+**Description:** Android app for accelerometer/gyroscope/GPS capture with BLE MCU interface, offline-first SQLite, export to CSV/Parquet, and TF-Lite on-device activity recognition.  
+**Technologies:** Kotlin, Android, BLE, SQLite, TensorFlow Lite  
+**Status:** 🟡 In Progress  
+**Links:** [GitHub Repo](#) • [Demo Video](#) • [Docs](#)
 
 ---
 
 ## 🔮 Future Projects
 
-Stay tuned! I'm always working on new ideas and exploring different technologies. Future projects will be added here as they come to life.
-
-- **Idea 1:** Coming soon...
-- **Idea 2:** Coming soon...
-- **Idea 3:** Coming soon...
+- **Robotic Telepresence Chess Board:** Cloud-synced board with CV position validation and a magnetic end-effector arm to play vs bots or remote players (spectator mode supported).  
+- **Edge-First Time-Series Toolkit:** Lightweight feature extraction + on-device drift alerts.  
+- **Notebook→App Converter:** Turn Jupyter notebooks into minimal Flask apps with one command.
 
 ---
 
 ## 👨‍💻 About Me
 
-I'm a passionate developer who loves building creative solutions and exploring new technologies. This portfolio represents my journey in software development and showcases the projects I'm most proud of.
+I’m a UW–Madison student building practical AI systems, reliable backends, and crisp UIs. This portfolio tracks what I’ve shipped and what I’m exploring next.
 
-**Interests:** Web Development, Machine Learning, Cloud Computing, Open Source
+**Interests:** Web Development, Machine Learning, Embedded Systems, Edge AI
 
 **Connect with me:**
 - GitHub: [@rohitsudhakar1](https://github.com/rohitsudhakar1)
-- LinkedIn: [Your LinkedIn Profile](#)
-- Portfolio: [Your Website](#)
-- Email: [Your Email](#)
+- LinkedIn: [linkedin.com/in/rohit-sudhakar-ce](https://www.linkedin.com/in/rohit-sudhakar-ce/)
+- Email: rsudhakar2@wisc.edu
 
 ---
 
 ## 📝 How to Add New Projects
 
-When adding a new project to this portfolio, follow these steps:
-
-1. **Create a new section** under "Current Projects" using the template below:
+1. **Copy this block** and paste under “Featured Projects”:
    ```markdown
-   ### Project Name: [Your Project Name]
-   **Description:** Brief description of what this project does and why it's interesting.
-   
-   **Technologies:** List of key technologies/frameworks used
-   
-   **Status:** 🟢 Active Development | 🟡 In Progress | 🔵 Completed
-   
-   **Links:** [GitHub Repo](#) | [Live Demo](#) | [Documentation](#)
-   ```
-
-2. **Update the project details:**
-   - Replace `[Your Project Name]` with the actual project name
-   - Write a compelling description (2-3 sentences)
-   - List the main technologies, languages, or frameworks used
-   - Update the status with the appropriate emoji
-   - Add relevant links (repo, demo, docs)
-
-3. **Organize projects:**
-   - Keep active projects at the top
-   - Archive completed projects in a separate section if needed
-   - Maintain consistent formatting
-
-4. **Commit your changes:**
-   - Use descriptive commit messages like "Add [Project Name] to portfolio"
-   - Keep the README up-to-date as projects evolve
-
----
-
-## 🌟 Featured Technologies
-
-![JavaScript](https://img.shields.io/badge/-JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/-Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-
----
-
-## 📊 Portfolio Stats
-
-- **Total Projects:** 3
-- **Active Projects:** TBD
-- **Technologies Used:** TBD
-- **Last Updated:** October 2025
-
----
-
-## 📄 License
-
-This portfolio and its projects are available under their respective licenses. Check individual project repositories for specific licensing information.
-
----
-
-**⭐ If you find any of my projects interesting, feel free to star them and reach out!**
+   ### Project Name
+   **Description:** 1–2 lines on what it does and why it’s interesting.  
+   **Technologies:** Main stacks/tools  
+   **Status:** 🟢 Active Development | 🟡 In Progress | 🔵 Completed  
+   **Links:** [GitHub Repo](#) • [Live Demo](#) • [Docs](#)
