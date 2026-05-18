@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rohit Sudhakar — Portfolio</title>
+<meta name="description" content="Rohit Sudhakar — CS &amp; Computer Engineering at UW–Madison. Selected works across AI/ML, web, mobile, and embedded systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">rs<span class="brand-dot">·</span></span>
+    <nav class="nav">
+      <a href="#work">work</a>
+      <a href="#about">about</a>
+      <a href="#contact">contact</a>
+      <a href="https://github.com/rohitsudhakar1" target="_blank" rel="noopener">github ↗</a>
+    </nav>
+    <span class="clock" id="clock">--:--:-- CT</span>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-meta">
+      <span class="kv"><span class="k">file</span><span class="v">/index.html</span></span>
+      <span class="kv"><span class="k">build</span><span class="v" id="buildId">001</span></span>
+      <span class="kv"><span class="k">loc</span><span class="v">Madison, WI · 43.07°N</span></span>
+    </div>
+
+    <h1 class="display">
+      <span class="line">Rohit</span>
+      <span class="line italic">Sudhakar.</span>
+      <span class="tag">— engineer's notebook, v2026</span>
+    </h1>
+
+    <p class="lede">
+      I build at the seam between <em>software</em> and <em>silicon</em>: ML systems that ship,
+      embedded firmware that holds real-time deadlines, and the web glue in between. Currently
+      finishing CS &amp; Computer Engineering at UW–Madison.
+    </p>
+
+    <div class="hero-foot">
+      <a class="cta" href="#work"><span>Selected work</span><span class="arrow">↓</span></a>
+      <span class="status"><span class="dot"></span>open to roles · summer / new-grad ’26</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="work">
+  <div class="section-head">
+    <span class="rule"></span>
+    <h2><span class="num">01</span> Selected work</h2>
+    <p class="sec-sub">Ten projects across four disciplines. Each shipped, demoed, or graded.</p>
+  </div>
+
+  <!-- AI / ML -->
+  <div class="band" data-band="ai">
+    <div class="band-label">
+      <span class="band-num">/ai-ml</span>
+      <span class="band-count">04</span>
+    </div>
+    <div class="cards">
+
+      <a class="card feature" href="https://github.com/rohitsudhakar1/xns-ai-categorization" target="_blank" rel="noopener">
+        <div class="card-meta">
+          <span class="tag-pill">flagship</span>
+          <span class="card-stack">FLAN-T5 · LinearSVC · Flask · Docker</span>
+        </div>
+        <h3>XNS Categorization Engine</h3>
+        <p>End-to-end ML pipeline categorizing 1.4M+ banking transactions. Two-stage inference (fast SVC fallback + FLAN-T5 for tail), fuzzy normalization, retraining loop from corrected exports. Built at Ardent Capital.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/patch-resume" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">React · FastAPI · GPT-4 · LaTeX</span></div>
+        <h3>Patch Resume</h3>
+        <p>AI resume editor — uploads any PDF/DOCX, converts to clean LaTeX, accepts iterative edits via chat with Cursor-style diff preview. Multi-engine LaTeX compiler with AI-driven error recovery.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/Restaurant_finder" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Python · Flask · Selenium · GPT</span></div>
+        <h3>Restaurant Finder</h3>
+        <p>Scrapes &amp; ranks restaurants by city, then has GPT distill review themes into per-dish highlights. Cached locally so repeat queries are instant.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/Chess" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Python · YOLO · OpenCV</span></div>
+        <h3>Chess CV</h3>
+        <p>Custom-trained YOLO model that locates a physical board from any angle, runs a perspective transform, and emits piece positions ready for engine analysis.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- WEB -->
+  <div class="band" data-band="web">
+    <div class="band-label">
+      <span class="band-num">/web</span>
+      <span class="band-count">02</span>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://github.com/rohitsudhakar1/docMangWeb" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">React · Vite · Flask · MongoDB</span></div>
+        <h3>Doc Manager</h3>
+        <p>Document &amp; client management web app. Role-based auth, activity log, approval queue, CSV bulk import. Built as an internal tool from spec to deploy.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/Enigma" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Python</span></div>
+        <h3>Enigma Machine</h3>
+        <p>Faithful software simulation of the WWII Enigma rotor cipher — plugboard, three rotors, reflector. Built to internalize the math by hand-stepping each encryption.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- MOBILE -->
+  <div class="band" data-band="mobile">
+    <div class="band-label">
+      <span class="band-num">/mobile</span>
+      <span class="band-count">03</span>
+    </div>
+    <div class="cards">
+
+      <a class="card" href="https://github.com/rohitsudhakar1/PocketTherapist" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Kotlin · Android · Gemini · Firebase</span></div>
+        <h3>Pocket Therapist</h3>
+        <p>Mental wellness Android app. Journals are emotion-classified on-device, then Gemini returns personalized song picks, nearby help, and 2–10 min interventions. Built with a 4-person ECE 454 team.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/NidraV2" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Flutter · Supabase</span></div>
+        <h3>Nidra v2</h3>
+        <p>Sleep &amp; mindfulness app — guided meditations, mood tracking, save-quote-inline, custom thumbnails. Iterated through several UX rewrites to hit a calm, no-friction loop.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/athlete-ally" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Next.js · Postgres · PostgREST</span></div>
+        <h3>Athlete Ally</h3>
+        <p>Tennis training platform — periodized programs, drill libraries, athlete &amp; coach views. Dockerized full stack with profile management and password flows.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- EMBEDDED -->
+  <div class="band" data-band="embedded">
+    <div class="band-label">
+      <span class="band-num">/embedded</span>
+      <span class="band-count">01</span>
+    </div>
+    <div class="cards">
+
+      <a class="card feature dark" href="https://github.com/rohitsudhakar1/FreeRTOS-Blackjack" target="_blank" rel="noopener">
+        <div class="card-meta">
+          <span class="tag-pill">hardware</span>
+          <span class="card-stack">C · FreeRTOS · PSoC 6 · GCC ARM</span>
+        </div>
+        <h3>FreeRTOS Blackjack</h3>
+        <p>Bare-metal microcontroller coursework on Infineon PSoC 6. Custom drivers for I²C, SPI, UART, PWM, LCD, IMU, EEPROM. Final units run on FreeRTOS — tasks, semaphores, queues, task notifications.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- ARCHIVE -->
+<section class="archive">
+  <div class="section-head">
+    <span class="rule"></span>
+    <h2><span class="num">02</span> Archive</h2>
+    <p class="sec-sub">Older coursework &amp; small experiments.</p>
+  </div>
+  <ul class="arc-list">
+    <li><a href="https://github.com/rohitsudhakar1/UCSDUnfoldingMaps" target="_blank">UCSD Unfolding Maps</a><span class="dot-sep">·</span><span>Java OOP coursework — interactive earthquake &amp; airport maps</span><span class="year">2023</span></li>
+    <li><a href="https://github.com/rohitsudhakar1/Sacred-Self-app" target="_blank">Sacred Self</a><span class="dot-sep">·</span><span>Earlier iteration of the Nidra wellness concept</span><span class="year">2024</span></li>
+    <li><a href="https://github.com/rohitsudhakar1/Perception" target="_blank">Perception</a><span class="dot-sep">·</span><span>Wisconsin Autonomous Club — perception module</span><span class="year">2024</span></li>
+    <li><a href="https://github.com/rohitsudhakar1/Python_projects" target="_blank">Python Projects</a><span class="dot-sep">·</span><span>First-year Python sketches</span><span class="year">2020</span></li>
+  </ul>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="section-head">
+    <span class="rule"></span>
+    <h2><span class="num">03</span> About</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>I'm a senior at the <strong>University of Wisconsin–Madison</strong>, double-majoring in <strong>Computer Science</strong> and <strong>Computer Engineering</strong>. I like work that crosses layers — a model that's no good unless it ships, firmware that's no good unless it holds a deadline, a UI that's no good unless someone uses it twice.</p>
+      <p>Most recently I built XNS, an ML categorization platform that processed <strong>1.4M+ banking records</strong>, at Ardent Capital. Before that I was on the Wisconsin Autonomous Club's perception team. In my own time I keep one embedded project and one full-stack app moving in parallel — current rotation is the FreeRTOS work and patch-resume.</p>
+      <p>Outside engineering: tennis (NTRP 4.0-ish, still climbing), film photography, and an ongoing argument with myself about whether to learn Rust before I graduate.</p>
+    </div>
+
+    <aside class="facts">
+      <dl>
+        <dt>School</dt><dd>UW–Madison · CS + Computer Engineering</dd>
+        <dt>Stack</dt><dd>Python · TypeScript · Kotlin · C · React · FastAPI · Postgres</dd>
+        <dt>Hardware</dt><dd>PSoC 6 · STM32 · Arduino · Raspberry Pi</dd>
+        <dt>Looking for</dt><dd>Summer / new-grad SWE · ML eng · embedded</dd>
+        <dt>Languages</dt><dd>English · Tamil · French (passable)</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-head">
+    <span class="rule"></span>
+    <h2><span class="num">04</span> Get in touch</h2>
+  </div>
+
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:rsudhakar2@wisc.edu">
+      <span class="cc-k">email</span>
+      <span class="cc-v">rsudhakar2@wisc.edu</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+    <a class="contact-card" href="https://www.linkedin.com/in/rohit-sudhakar-ce/" target="_blank" rel="noopener">
+      <span class="cc-k">linkedin</span>
+      <span class="cc-v">/in/rohit-sudhakar-ce</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+    <a class="contact-card" href="https://github.com/rohitsudhakar1" target="_blank" rel="noopener">
+      <span class="cc-k">github</span>
+      <span class="cc-v">@rohitsudhakar1</span>
+      <span class="cc-arrow">↗</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Rohit Sudhakar</span>
+    <span class="foot-mono">handwritten · no template · <a href="https://github.com/rohitsudhakar1/Project-Portfolio" target="_blank">source</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
