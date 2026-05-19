@@ -3,56 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rohit Sudhakar — Portfolio</title>
-<meta name="description" content="Rohit Sudhakar — CS &amp; Computer Engineering at UW–Madison. Selected works across AI/ML, web, mobile, and embedded systems.">
+<title>rohit.sudhakar / portfolio</title>
+<meta name="description" content="Rohit Sudhakar — CS &amp; Computer Engineering at UW–Madison. AI/ML, web, mobile, and embedded systems.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="grain"></div>
+<div class="scanlines"></div>
+<div class="cursor" id="cursor"><span class="cx"></span><span class="cy"></span><b class="cl"></b></div>
+
+<!-- BOOT LINE -->
+<div class="boot" id="boot"></div>
 
 <header class="topbar">
   <div class="topbar-inner">
-    <span class="brand">rs<span class="brand-dot">·</span></span>
+    <span class="brand">RS<span class="brand-dot">.</span></span>
     <nav class="nav">
       <a href="#work">work</a>
       <a href="#about">about</a>
       <a href="#contact">contact</a>
       <a href="https://github.com/rohitsudhakar1" target="_blank" rel="noopener">github ↗</a>
     </nav>
-    <span class="clock" id="clock">--:--:-- CT</span>
+    <span class="instruments">
+      <span class="led led-pwr" title="power"></span>
+      <span class="led led-act" title="activity"></span>
+      <span class="led led-net" title="network"></span>
+      <span class="clock" id="clock">--:--:-- CT</span>
+    </span>
   </div>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- HERO — PCB schematic -->
 <section class="hero">
+  <div class="hero-corner tl">+</div>
+  <div class="hero-corner tr">+</div>
+  <div class="hero-corner bl">+</div>
+  <div class="hero-corner br">+</div>
+
+  <div class="silk silk-tl">REV 2026.05 · CY8C6347BZI-BLD53 · ROHIT_OS v1</div>
+  <div class="silk silk-br">PORTFOLIO BOARD · 4-LAYER · LEAD-FREE · ↑ TOP SIDE</div>
+
   <div class="hero-grid">
-    <div class="hero-meta">
-      <span class="kv"><span class="k">file</span><span class="v">/index.html</span></span>
-      <span class="kv"><span class="k">build</span><span class="v" id="buildId">001</span></span>
-      <span class="kv"><span class="k">loc</span><span class="v">Madison, WI · 43.07°N</span></span>
+    <!-- LEFT: schematic SVG -->
+    <div class="schematic" aria-hidden="true">
+      <svg viewBox="0 0 600 600" preserveAspectRatio="xMidYMid meet" class="board">
+        <defs>
+          <pattern id="pour" width="6" height="6" patternUnits="userSpaceOnUse">
+            <rect width="6" height="6" fill="transparent"/>
+            <circle cx="3" cy="3" r="0.6" fill="#3a342b"/>
+          </pattern>
+          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="2" result="b"/>
+            <feMerge>
+              <feMergeNode in="b"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+
+        <rect width="600" height="600" fill="url(#pour)" opacity="0.5"/>
+
+        <!-- Traces — copper paths -->
+        <g class="traces" stroke="#e0a060" stroke-width="1.4" fill="none" filter="url(#glow)" stroke-linecap="square">
+          <!-- U1 to AI/ML (top-left) -->
+          <path class="trace" d="M 230 270 L 180 270 L 180 160 L 140 160"/>
+          <!-- U1 to EMBEDDED (top-right) -->
+          <path class="trace" d="M 370 270 L 420 270 L 420 160 L 460 160"/>
+          <!-- U1 to MOBILE (bottom-left) -->
+          <path class="trace" d="M 230 330 L 180 330 L 180 440 L 140 440"/>
+          <!-- U1 to WEB (bottom-right) -->
+          <path class="trace" d="M 370 330 L 420 330 L 420 440 L 460 440"/>
+          <!-- Power rails -->
+          <path class="trace dim" d="M 300 230 L 300 130 L 60 130"/>
+          <path class="trace dim" d="M 300 370 L 300 480 L 540 480"/>
+        </g>
+
+        <!-- Pads on trace endpoints -->
+        <g class="pads" fill="#e0a060">
+          <circle cx="140" cy="160" r="3"/>
+          <circle cx="460" cy="160" r="3"/>
+          <circle cx="140" cy="440" r="3"/>
+          <circle cx="460" cy="440" r="3"/>
+          <circle cx="60"  cy="130" r="2.5"/>
+          <circle cx="540" cy="480" r="2.5"/>
+        </g>
+
+        <!-- Daughter components: AI/ML -->
+        <g class="chip" data-chip="ai" transform="translate(60 130)">
+          <rect x="0" y="0" width="160" height="60" rx="4" ry="4" fill="#181511" stroke="#3a342b"/>
+          <g class="chip-pins" stroke="#c7b46a" stroke-width="1.2">
+            <line x1="0" y1="14" x2="-6" y2="14"/>
+            <line x1="0" y1="30" x2="-6" y2="30"/>
+            <line x1="0" y1="46" x2="-6" y2="46"/>
+            <line x1="160" y1="14" x2="166" y2="14"/>
+            <line x1="160" y1="30" x2="166" y2="30"/>
+            <line x1="160" y1="46" x2="166" y2="46"/>
+          </g>
+          <text x="80" y="22" text-anchor="middle" class="chip-ref">U2</text>
+          <text x="80" y="42" text-anchor="middle" class="chip-name">AI / ML</text>
+          <text x="80" y="55" text-anchor="middle" class="chip-sub">4 modules</text>
+        </g>
+
+        <!-- Daughter components: EMBEDDED -->
+        <g class="chip" data-chip="embedded" transform="translate(380 130)">
+          <rect x="0" y="0" width="160" height="60" rx="4" ry="4" fill="#181511" stroke="#3a342b"/>
+          <g class="chip-pins" stroke="#c7b46a" stroke-width="1.2">
+            <line x1="0" y1="14" x2="-6" y2="14"/>
+            <line x1="0" y1="30" x2="-6" y2="30"/>
+            <line x1="0" y1="46" x2="-6" y2="46"/>
+            <line x1="160" y1="14" x2="166" y2="14"/>
+            <line x1="160" y1="30" x2="166" y2="30"/>
+            <line x1="160" y1="46" x2="166" y2="46"/>
+          </g>
+          <text x="80" y="22" text-anchor="middle" class="chip-ref">U3</text>
+          <text x="80" y="42" text-anchor="middle" class="chip-name">EMBEDDED</text>
+          <text x="80" y="55" text-anchor="middle" class="chip-sub">1 module</text>
+        </g>
+
+        <!-- Daughter components: MOBILE -->
+        <g class="chip" data-chip="mobile" transform="translate(60 410)">
+          <rect x="0" y="0" width="160" height="60" rx="4" ry="4" fill="#181511" stroke="#3a342b"/>
+          <g class="chip-pins" stroke="#c7b46a" stroke-width="1.2">
+            <line x1="0" y1="14" x2="-6" y2="14"/>
+            <line x1="0" y1="30" x2="-6" y2="30"/>
+            <line x1="0" y1="46" x2="-6" y2="46"/>
+            <line x1="160" y1="14" x2="166" y2="14"/>
+            <line x1="160" y1="30" x2="166" y2="30"/>
+            <line x1="160" y1="46" x2="166" y2="46"/>
+          </g>
+          <text x="80" y="22" text-anchor="middle" class="chip-ref">U4</text>
+          <text x="80" y="42" text-anchor="middle" class="chip-name">MOBILE</text>
+          <text x="80" y="55" text-anchor="middle" class="chip-sub">3 modules</text>
+        </g>
+
+        <!-- Daughter components: WEB -->
+        <g class="chip" data-chip="web" transform="translate(380 410)">
+          <rect x="0" y="0" width="160" height="60" rx="4" ry="4" fill="#181511" stroke="#3a342b"/>
+          <g class="chip-pins" stroke="#c7b46a" stroke-width="1.2">
+            <line x1="0" y1="14" x2="-6" y2="14"/>
+            <line x1="0" y1="30" x2="-6" y2="30"/>
+            <line x1="0" y1="46" x2="-6" y2="46"/>
+            <line x1="160" y1="14" x2="166" y2="14"/>
+            <line x1="160" y1="30" x2="166" y2="30"/>
+            <line x1="160" y1="46" x2="166" y2="46"/>
+          </g>
+          <text x="80" y="22" text-anchor="middle" class="chip-ref">U5</text>
+          <text x="80" y="42" text-anchor="middle" class="chip-name">WEB</text>
+          <text x="80" y="55" text-anchor="middle" class="chip-sub">2 modules</text>
+        </g>
+
+        <!-- Main IC: U1 -->
+        <g class="chip main" transform="translate(225 220)">
+          <rect x="0" y="0" width="150" height="160" rx="6" ry="6" fill="#0e0c09" stroke="#e0a060" stroke-width="1.2"/>
+          <!-- Notch -->
+          <circle cx="14" cy="14" r="3" fill="none" stroke="#3a342b" stroke-width="1"/>
+          <!-- Pins -->
+          <g class="chip-pins" stroke="#e0a060" stroke-width="1.4">
+            <line x1="0" y1="40" x2="-8" y2="40"/>
+            <line x1="0" y1="80" x2="-8" y2="80"/>
+            <line x1="0" y1="120" x2="-8" y2="120"/>
+            <line x1="150" y1="40" x2="158" y2="40"/>
+            <line x1="150" y1="80" x2="158" y2="80"/>
+            <line x1="150" y1="120" x2="158" y2="120"/>
+          </g>
+          <text x="75" y="30" text-anchor="middle" class="chip-ref main-ref">U1</text>
+          <text x="75" y="82" text-anchor="middle" class="chip-name main-name">ROHIT</text>
+          <text x="75" y="108" text-anchor="middle" class="chip-name main-name">SUDHAKAR</text>
+          <text x="75" y="138" text-anchor="middle" class="chip-sub">UW–Madison · CS + CompE</text>
+        </g>
+
+        <!-- Reference designators on board -->
+        <text x="20" y="22" class="silk-tx">U1</text>
+        <text x="80" y="200" class="silk-tx">U2</text>
+        <text x="400" y="200" class="silk-tx">U3</text>
+        <text x="80" y="480" class="silk-tx">U4</text>
+        <text x="400" y="480" class="silk-tx">U5</text>
+
+        <!-- Mounting holes -->
+        <g class="holes" fill="#0b0a08" stroke="#3a342b" stroke-width="1">
+          <circle cx="20" cy="20" r="6"/>
+          <circle cx="580" cy="20" r="6"/>
+          <circle cx="20" cy="580" r="6"/>
+          <circle cx="580" cy="580" r="6"/>
+        </g>
+      </svg>
     </div>
 
-    <h1 class="display">
-      <span class="line">Rohit</span>
-      <span class="line italic">Sudhakar.</span>
-      <span class="tag">— engineer's notebook, v2026</span>
-    </h1>
-
-    <p class="lede">
-      I build at the seam between <em>software</em> and <em>silicon</em>: ML systems that ship,
-      embedded firmware that holds real-time deadlines, and the web glue in between. Currently
-      finishing CS &amp; Computer Engineering at UW–Madison.
-    </p>
-
-    <div class="hero-foot">
-      <a class="cta" href="#work"><span>Selected work</span><span class="arrow">↓</span></a>
-      <span class="status"><span class="dot"></span>open to roles · summer / new-grad ’26</span>
+    <!-- RIGHT: copy -->
+    <div class="hero-copy">
+      <span class="kicker">// hello world</span>
+      <h1 class="display">
+        <span class="line">I build at the</span>
+        <span class="line italic">seam between</span>
+        <span class="line">software<span class="amp"> &amp; </span>silicon.</span>
+      </h1>
+      <p class="lede">
+        Senior at the University of Wisconsin–Madison, double-majoring in
+        Computer Science and Computer Engineering. I like work that crosses
+        layers: ML systems that ship, firmware that holds real-time deadlines,
+        and the web glue in between.
+      </p>
+      <div class="hero-foot">
+        <a class="cta" href="#work"><span>See the work</span><span class="arrow">↓</span></a>
+        <span class="status"><span class="dot"></span>open · summer / new-grad ’26</span>
+      </div>
+      <div class="datasheet">
+        <span class="ds-k">datasheet</span>
+        <span class="ds-row"><b>PKG</b> · 22-pin engineer · Madison, WI</span>
+        <span class="ds-row"><b>VCC</b> · 3.3–5.0 V (caffeinated)</span>
+        <span class="ds-row"><b>OPS</b> · ML inference, firmware, web</span>
+        <span class="ds-row"><b>FREQ</b> · 200 wpm typing · 8 ms reflex</span>
+      </div>
     </div>
   </div>
 </section>
@@ -66,10 +233,11 @@
   </div>
 
   <!-- AI / ML -->
-  <div class="band" data-band="ai">
+  <div class="band" id="band-ai" data-band="ai">
     <div class="band-label">
-      <span class="band-num">/ai-ml</span>
+      <span class="band-num">U2 / ai-ml</span>
       <span class="band-count">04</span>
+      <span class="band-blurb">Pipelines, models, retraining loops.</span>
     </div>
     <div class="cards">
 
@@ -107,36 +275,32 @@
     </div>
   </div>
 
-  <!-- WEB -->
-  <div class="band" data-band="web">
+  <!-- EMBEDDED -->
+  <div class="band" id="band-embedded" data-band="embedded">
     <div class="band-label">
-      <span class="band-num">/web</span>
-      <span class="band-count">02</span>
+      <span class="band-num">U3 / embedded</span>
+      <span class="band-count">01</span>
+      <span class="band-blurb">Bare-metal C on Arm Cortex-M.</span>
     </div>
     <div class="cards">
-
-      <a class="card" href="https://github.com/rohitsudhakar1/docMangWeb" target="_blank" rel="noopener">
-        <div class="card-meta"><span class="card-stack">React · Vite · Flask · MongoDB</span></div>
-        <h3>Doc Manager</h3>
-        <p>Document &amp; client management web app. Role-based auth, activity log, approval queue, CSV bulk import. Built as an internal tool from spec to deploy.</p>
+      <a class="card feature dark" href="https://github.com/rohitsudhakar1/FreeRTOS-Blackjack" target="_blank" rel="noopener">
+        <div class="card-meta">
+          <span class="tag-pill">hardware</span>
+          <span class="card-stack">C · FreeRTOS · PSoC 6 · GCC ARM</span>
+        </div>
+        <h3>FreeRTOS Blackjack</h3>
+        <p>Bare-metal microcontroller coursework on Infineon PSoC 6. Custom drivers for I²C, SPI, UART, PWM, LCD, IMU, EEPROM. Final units run on FreeRTOS — tasks, semaphores, queues, task notifications.</p>
         <span class="card-cta">read <span class="arrow">→</span></span>
       </a>
-
-      <a class="card" href="https://github.com/rohitsudhakar1/Enigma" target="_blank" rel="noopener">
-        <div class="card-meta"><span class="card-stack">Python</span></div>
-        <h3>Enigma Machine</h3>
-        <p>Faithful software simulation of the WWII Enigma rotor cipher — plugboard, three rotors, reflector. Built to internalize the math by hand-stepping each encryption.</p>
-        <span class="card-cta">read <span class="arrow">→</span></span>
-      </a>
-
     </div>
   </div>
 
   <!-- MOBILE -->
-  <div class="band" data-band="mobile">
+  <div class="band" id="band-mobile" data-band="mobile">
     <div class="band-label">
-      <span class="band-num">/mobile</span>
+      <span class="band-num">U4 / mobile</span>
       <span class="band-count">03</span>
+      <span class="band-blurb">Native + cross-platform.</span>
     </div>
     <div class="cards">
 
@@ -164,21 +328,26 @@
     </div>
   </div>
 
-  <!-- EMBEDDED -->
-  <div class="band" data-band="embedded">
+  <!-- WEB -->
+  <div class="band" id="band-web" data-band="web">
     <div class="band-label">
-      <span class="band-num">/embedded</span>
-      <span class="band-count">01</span>
+      <span class="band-num">U5 / web</span>
+      <span class="band-count">02</span>
+      <span class="band-blurb">Backends &amp; small clean UIs.</span>
     </div>
     <div class="cards">
 
-      <a class="card feature dark" href="https://github.com/rohitsudhakar1/FreeRTOS-Blackjack" target="_blank" rel="noopener">
-        <div class="card-meta">
-          <span class="tag-pill">hardware</span>
-          <span class="card-stack">C · FreeRTOS · PSoC 6 · GCC ARM</span>
-        </div>
-        <h3>FreeRTOS Blackjack</h3>
-        <p>Bare-metal microcontroller coursework on Infineon PSoC 6. Custom drivers for I²C, SPI, UART, PWM, LCD, IMU, EEPROM. Final units run on FreeRTOS — tasks, semaphores, queues, task notifications.</p>
+      <a class="card" href="https://github.com/rohitsudhakar1/docMangWeb" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">React · Vite · Flask · MongoDB</span></div>
+        <h3>Doc Manager</h3>
+        <p>Document &amp; client management web app. Role-based auth, activity log, approval queue, CSV bulk import. Built as an internal tool from spec to deploy.</p>
+        <span class="card-cta">read <span class="arrow">→</span></span>
+      </a>
+
+      <a class="card" href="https://github.com/rohitsudhakar1/Enigma" target="_blank" rel="noopener">
+        <div class="card-meta"><span class="card-stack">Python</span></div>
+        <h3>Enigma Machine</h3>
+        <p>Faithful software simulation of the WWII Enigma rotor cipher — plugboard, three rotors, reflector. Built to internalize the math by hand-stepping each encryption.</p>
         <span class="card-cta">read <span class="arrow">→</span></span>
       </a>
 
@@ -211,8 +380,8 @@
 
   <div class="about-grid">
     <div class="about-copy">
-      <p>I'm a senior at the <strong>University of Wisconsin–Madison</strong>, double-majoring in <strong>Computer Science</strong> and <strong>Computer Engineering</strong>. I like work that crosses layers — a model that's no good unless it ships, firmware that's no good unless it holds a deadline, a UI that's no good unless someone uses it twice.</p>
-      <p>Most recently I built XNS, an ML categorization platform that processed <strong>1.4M+ banking records</strong>, at Ardent Capital. Before that I was on the Wisconsin Autonomous Club's perception team. In my own time I keep one embedded project and one full-stack app moving in parallel — current rotation is the FreeRTOS work and patch-resume.</p>
+      <p>I'm a senior at the <strong>University of Wisconsin–Madison</strong>, double-majoring in <strong>Computer Science</strong> and <strong>Computer Engineering</strong>. The kind of work I keep coming back to crosses layers — a model that's no good unless it ships, firmware that's no good unless it holds a deadline, a UI that's no good unless someone uses it twice.</p>
+      <p>Most recently I built <strong>XNS</strong>, an ML categorization platform that processed <strong>1.4M+ banking records</strong>, at Ardent Capital. Before that I was on the Wisconsin Autonomous Club's perception team. In my own time I keep one embedded project and one full-stack app moving in parallel — current rotation is the FreeRTOS work and patch-resume.</p>
       <p>Outside engineering: tennis (NTRP 4.0-ish, still climbing), film photography, and an ongoing argument with myself about whether to learn Rust before I graduate.</p>
     </div>
 
@@ -237,17 +406,17 @@
 
   <div class="contact-grid">
     <a class="contact-card" href="mailto:rsudhakar2@wisc.edu">
-      <span class="cc-k">email</span>
+      <span class="cc-k">// email</span>
       <span class="cc-v">rsudhakar2@wisc.edu</span>
       <span class="cc-arrow">↗</span>
     </a>
     <a class="contact-card" href="https://www.linkedin.com/in/rohit-sudhakar-ce/" target="_blank" rel="noopener">
-      <span class="cc-k">linkedin</span>
+      <span class="cc-k">// linkedin</span>
       <span class="cc-v">/in/rohit-sudhakar-ce</span>
       <span class="cc-arrow">↗</span>
     </a>
     <a class="contact-card" href="https://github.com/rohitsudhakar1" target="_blank" rel="noopener">
-      <span class="cc-k">github</span>
+      <span class="cc-k">// github</span>
       <span class="cc-v">@rohitsudhakar1</span>
       <span class="cc-arrow">↗</span>
     </a>
@@ -259,7 +428,8 @@
 <footer>
   <div class="foot-inner">
     <span>© 2026 Rohit Sudhakar</span>
-    <span class="foot-mono">handwritten · no template · <a href="https://github.com/rohitsudhakar1/Project-Portfolio" target="_blank">source</a></span>
+    <span class="foot-mono" id="scrollLog">scroll · 0%</span>
+    <span class="foot-mono">no template · <a href="https://github.com/rohitsudhakar1/Project-Portfolio" target="_blank">view source</a></span>
   </div>
 </footer>
 
