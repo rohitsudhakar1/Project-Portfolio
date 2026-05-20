@@ -19,9 +19,9 @@
   <div class="topbar-inner">
     <span class="brand">RS<span class="brand-dot">.</span></span>
     <nav class="nav">
+      <a href="#about">about</a>
       <a href="#experience">experience</a>
       <a href="#work">projects</a>
-      <a href="#about">about</a>
       <a href="#contact">contact</a>
     </nav>
     <span class="instruments">
@@ -138,7 +138,7 @@
           </g>
           <text x="80" y="22" text-anchor="middle" class="chip-ref">U5</text>
           <text x="80" y="42" text-anchor="middle" class="chip-name">WEB</text>
-          <text x="80" y="55" text-anchor="middle" class="chip-sub">next.js, react, flask</text>
+          <text x="80" y="55" text-anchor="middle" class="chip-sub">next.js, supabase, flask</text>
         </g>
 
         <g class="chip main" transform="translate(225 220)">
@@ -185,7 +185,7 @@
         Senior at UW-Madison finishing a B.S. in Computer Engineering (Machine Learning track, GPA 3.72). I work across full-stack, AI/ML, and embedded depending on what the project needs. Right now I'm Lead Developer at Nidra, Founding Engineer at Office Hours Queue, and graduating in May 2026.
       </p>
       <div class="hero-foot">
-        <a class="cta" href="#experience"><span>experience</span><span class="arrow">→</span></a>
+        <a class="cta" href="#about"><span>read on</span><span class="arrow">↓</span></a>
         <a class="cta-secondary" href="Rohit_Sudhakar_SWE.pdf" target="_blank" rel="noopener"><span>view resume</span><span class="arrow">↗</span></a>
         <span class="status"><span class="dot"></span>open for summer / new-grad 2026</span>
       </div>
@@ -193,11 +193,41 @@
   </div>
 </section>
 
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="section-head">
+    <span class="rule"></span>
+    <h2><span class="num">01</span> About</h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-copy">
+      <p>I'm finishing a B.S. in Computer Engineering at UW-Madison this May, on the Machine Learning and Data Science track. GPA 3.72. Dean's Honor List six semesters in a row.</p>
+      <p>I like work that crosses layers. The same week I'll be writing C drivers for a microcontroller, training a model on a few hundred thousand rows, and shipping a feature in a Next.js admin portal. That breadth is what I'm trying to keep through the start of my career.</p>
+      <p>Outside engineering: tennis, film photography, and a long-running plan to actually learn Rust before graduation.</p>
+    </div>
+
+    <aside class="facts">
+      <dl>
+        <dt>School</dt><dd>UW-Madison, B.S. Computer Engineering (May 2026)</dd>
+        <dt>Track</dt><dd>Machine Learning &amp; Data Science</dd>
+        <dt>GPA</dt><dd>3.72 / 4.00</dd>
+        <dt>Awards</dt><dd>Best Capstone Project (top of 40+ teams); Dean's Honor List, 6 semesters</dd>
+        <dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java, C/C++, Kotlin, Dart, SQL, Verilog, MIPS</dd>
+        <dt>Stack</dt><dd>React, Next.js, Flask, FastAPI, Postgres, Supabase, Redis, Docker, AWS, Firebase</dd>
+        <dt>AI/ML</dt><dd>FLAN-T5, GPT, Hugging Face, TensorFlow, scikit-learn, embeddings, RAG</dd>
+        <dt>Embedded</dt><dd>FreeRTOS, BLE, EEPROM, PSoC 6, semaphores, queues, event groups</dd>
+        <dt>Looking for</dt><dd>Summer 2026 internship and new-grad SWE / ML / embedded roles</dd>
+      </dl>
+    </aside>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience" class="experience">
   <div class="section-head">
     <span class="rule"></span>
-    <h2><span class="num">01</span> Where I've worked</h2>
+    <h2><span class="num">02</span> Where I've worked</h2>
     <p class="sec-sub">Three years across five companies, ranging from solo intern roles to founding engineer.</p>
   </div>
 
@@ -313,7 +343,7 @@
 <section id="work" class="work">
   <div class="section-head">
     <span class="rule"></span>
-    <h2><span class="num">02</span> Selected projects</h2>
+    <h2><span class="num">03</span> Selected projects</h2>
     <p class="sec-sub">A mix of resume highlights and side work across the four chips above. Each is shipped, demoed, or graded.</p>
   </div>
 
@@ -399,10 +429,10 @@
         <span class="card-cta">view on github<span class="arrow">→</span></span>
       </a>
 
-      <a class="card" href="https://github.com/rohitsudhakar1/NidraV2" target="_blank" rel="noopener">
+      <a class="card" href="https://github.com/rohitsudhakar1/Sacred-Self-app" target="_blank" rel="noopener">
         <div class="card-meta"><span class="card-stack">Flutter · Supabase</span></div>
-        <h3>Nidra v2</h3>
-        <p>Sleep and mindfulness app. Guided meditations, mood tracking, inline quote saving, custom thumbnails. Iterated through several UX rewrites to land on a calm, no-friction loop.</p>
+        <h3>Sacred Self</h3>
+        <p>Mobile meditation and mindfulness app. Guided meditations, mood tracking, inline quote saving, custom thumbnails. Iterated through several UX rewrites to land on a calm, no-friction loop.</p>
         <span class="card-cta">view on github<span class="arrow">→</span></span>
       </a>
 
@@ -420,9 +450,19 @@
   <div class="band" id="band-web" data-band="web">
     <div class="band-label">
       <span class="band-num">U5 / web</span>
-      <span class="band-count">02</span>
+      <span class="band-count">03</span>
     </div>
     <div class="cards">
+
+      <a class="card feature" href="https://github.com/rohitsudhakar1/Sacred-Self" target="_blank" rel="noopener">
+        <div class="card-meta">
+          <span class="tag-pill">current role</span>
+          <span class="card-stack">Next.js 16 · React 19 · Supabase · TypeScript</span>
+        </div>
+        <h3>Nidra Admin Portal</h3>
+        <p>Full admin platform for Nidra's meditation product. 40+ data models with Row-Level Security, 10+ Edge Functions, 40+ API routes powering a content CMS, moderation queue, and audit log. Spans 18+ repos with coordinated releases. Cut content review turnaround from days to under 2 hours.</p>
+        <span class="card-cta">view on github<span class="arrow">→</span></span>
+      </a>
 
       <a class="card" href="https://github.com/rohitsudhakar1/docMangWeb" target="_blank" rel="noopener">
         <div class="card-meta"><span class="card-stack">React · Vite · Flask · MongoDB</span></div>
@@ -447,45 +487,14 @@
 <section class="archive">
   <div class="section-head">
     <span class="rule"></span>
-    <h2><span class="num">03</span> Archive</h2>
+    <h2><span class="num">04</span> Archive</h2>
     <p class="sec-sub">Older coursework and smaller experiments.</p>
   </div>
   <ul class="arc-list">
     <li><a href="https://github.com/rohitsudhakar1/UCSDUnfoldingMaps" target="_blank">UCSD Unfolding Maps</a><span class="dot-sep">·</span><span>Java OOP coursework, interactive earthquake and airport maps</span><span class="year">2023</span></li>
-    <li><a href="https://github.com/rohitsudhakar1/Sacred-Self-app" target="_blank">Sacred Self</a><span class="dot-sep">·</span><span>Earlier iteration of the Nidra wellness concept</span><span class="year">2024</span></li>
     <li><a href="https://github.com/rohitsudhakar1/Perception" target="_blank">Perception</a><span class="dot-sep">·</span><span>Wisconsin Autonomous Club, perception module</span><span class="year">2024</span></li>
     <li><a href="https://github.com/rohitsudhakar1/Python_projects" target="_blank">Python Projects</a><span class="dot-sep">·</span><span>First-year Python sketches</span><span class="year">2020</span></li>
   </ul>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="about">
-  <div class="section-head">
-    <span class="rule"></span>
-    <h2><span class="num">04</span> About</h2>
-  </div>
-
-  <div class="about-grid">
-    <div class="about-copy">
-      <p>I'm finishing a B.S. in Computer Engineering at UW-Madison this May, on the Machine Learning and Data Science track. GPA 3.72. Dean's Honor List six semesters in a row.</p>
-      <p>I like work that crosses layers. The same week I'll be writing C drivers for a microcontroller, training a model on a few hundred thousand rows, and shipping a feature in a Next.js admin portal. That breadth is what I'm trying to keep through the start of my career.</p>
-      <p>Outside engineering: tennis, film photography, and a long-running plan to actually learn Rust before graduation.</p>
-    </div>
-
-    <aside class="facts">
-      <dl>
-        <dt>School</dt><dd>UW-Madison, B.S. Computer Engineering (May 2026)</dd>
-        <dt>Track</dt><dd>Machine Learning &amp; Data Science</dd>
-        <dt>GPA</dt><dd>3.72 / 4.00</dd>
-        <dt>Awards</dt><dd>Best Capstone Project (top of 40+ teams); Dean's Honor List, 6 semesters</dd>
-        <dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java, C/C++, Kotlin, Dart, SQL, Verilog, MIPS</dd>
-        <dt>Stack</dt><dd>React, Next.js, Flask, FastAPI, Postgres, Supabase, Redis, Docker, AWS, Firebase</dd>
-        <dt>AI/ML</dt><dd>FLAN-T5, GPT, Hugging Face, TensorFlow, scikit-learn, embeddings, RAG</dd>
-        <dt>Embedded</dt><dd>FreeRTOS, BLE, EEPROM, PSoC 6, semaphores, queues, event groups</dd>
-        <dt>Looking for</dt><dd>Summer 2026 internship and new-grad SWE / ML / embedded roles</dd>
-      </dl>
-    </aside>
-  </div>
 </section>
 
 <!-- CONTACT -->
