@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – Leo</title>
+<meta name="description" content="Privacy Policy for Leo, a personal assistant used only by Rohit Sudhakar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .policy {
+    max-width: var(--maxw);
+    min-height: calc(100vh - 150px);
+    margin: 0 auto;
+    padding: clamp(56px, 10vw, 120px) var(--pad-x);
+    border-left: 1px dashed var(--line-2);
+    border-right: 1px dashed var(--line-2);
+    border-bottom: 1px solid var(--line);
+  }
+  .policy h1 {
+    margin: 0 0 32px;
+    font-family: var(--serif);
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .policy p {
+    max-width: 62ch;
+    margin: 0 0 20px;
+    color: var(--fg-mute);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .policy p a { color: var(--copper); overflow-wrap: anywhere; }
+  .policy p a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cursor" id="cursor"><span class="cx"></span><span class="cy"></span></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">RS<span class="brand-dot">.</span></a>
+    <span></span>
+    <span class="instruments">
+      <span class="clock" id="clock">--:--:-- CT</span>
+    </span>
+  </div>
+</header>
+
+<main class="policy">
+  <h1>Privacy Policy – Leo</h1>
+  <p>Leo is a personal assistant used only by Rohit Sudhakar. It reads his own Gmail and creates email drafts on his behalf. It does not collect data from anyone else, and no data is shared with or sold to any third party.</p>
+  <p>Contact: <a href="mailto:rohitsudhakar23@gmail.com">rohitsudhakar23@gmail.com</a>.</p>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <span>© 2026 Rohit Sudhakar</span>
+    <span class="foot-mono"><a href="https://github.com/rohitsudhakar1/Project-Portfolio" target="_blank" rel="noopener">view source</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
